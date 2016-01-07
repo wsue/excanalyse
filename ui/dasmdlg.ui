@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DasmDialog</class>
+ <widget class="QDialog" name="DasmDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>509</width>
+    <height>362</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>反汇编窗口</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QPushButton" name="OpenElf">
+     <property name="text">
+      <string>打开elf文件</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1" colspan="2">
+    <widget class="QLineEdit" name="ElfName"/>
+   </item>
+   <item row="0" column="3">
+    <widget class="QPushButton" name="CloseButton">
+     <property name="text">
+      <string>退出</string>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QPushButton" name="ExecAct">
+     <property name="text">
+      <string>执行选定操作</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QComboBox" name="ActMode">
+     <item>
+      <property name="text">
+       <string>反汇编整个程序</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>显示所有函数名包含</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>反汇编函数名包含</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>反汇编指定函数</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>反汇编地址</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="1" column="2" colspan="2">
+    <widget class="QLineEdit" name="ActParam"/>
+   </item>
+   <item row="2" column="0" colspan="4">
+    <widget class="QTextEdit" name="textEdit"/>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

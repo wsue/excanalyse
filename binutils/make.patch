@@ -1,0 +1,26 @@
+--- binutils-2.20.1/binutils/Makefile.in.orig	2010-03-03 13:59:46.000000000 +0000
++++ binutils-2.20.1/binutils/Makefile.in	2010-09-26 17:10:57.000000000 +0000
+@@ -434,7 +434,7 @@
+ 	emul_aix.c emul_vanilla.c filemode.c \
+ 	ieee.c is-ranlib.c is-strip.c maybe-ranlib.c maybe-strip.c \
+ 	nlmconv.c nm.c not-ranlib.c not-strip.c \
+-	objcopy.c objdump.c prdbg.c \
++	objcopy.c objdump.c dumpwrap.c prdbg.c \
+ 	rclex.c rdcoff.c rddbg.c readelf.c rename.c \
+ 	resbin.c rescoff.c resrc.c resres.c \
+ 	size.c srconv.c stabs.c strings.c sysdump.c \
+@@ -1166,6 +1166,14 @@
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ @am__fastdepCC_FALSE@	$(COMPILE) -c $(OBJDUMP_DEFS) $(srcdir)/objdump.c
+ 
++
++dumpwrap.o:dumpwrap.c
++@am__fastdepCC_TRUE@	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $(OBJDUMP_DEFS) $(srcdir)/dumpwrap.c
++@am__fastdepCC_TRUE@	mv -f $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='dumpwrap.c' object='$@' libtool=no @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(COMPILE) -c $(OBJDUMP_DEFS) $(srcdir)/dumpwrap.c
++
+ # The following is commented out for the conversion to automake.
+ # This rule creates a single binary that switches between ar and ranlib
+ # by looking at argv[0].  Use this kludge to save some disk space.
